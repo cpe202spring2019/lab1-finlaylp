@@ -28,9 +28,13 @@ def bin_search(target, low, high, int_list):  # must use recursion
    """searches for target in int_list[low..high] and returns index if found
    If target is not found returns None. If list is None, raises ValueError """
    mid = (low + high)//2
+   if int_list == None:
+      raise ValueError
    if int_list[mid] == target:
       return mid
    elif int_list[mid] < target:
-      bin_search(target, low+1, high, int_list)
+      bin_search(target, mid+1, high, int_list)
    elif int_list[mid] > target:
-      bin_search(target, low, high-1, int_list) 
+      bin_search(target, low, mid-1, int_list)
+   #elif low > high:
+    #  return None 
