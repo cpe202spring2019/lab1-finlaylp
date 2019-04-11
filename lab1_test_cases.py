@@ -31,10 +31,11 @@ class TestLab1(unittest.TestCase):
         with self.assertRaises(ValueError):
            bin_search(5,0, 10, None)
         
-        list2 = [1,2,3,4,5,6,7,8,9,10]
-        self.assertEqual(bin_search(2,0, 9, list2), 1)
+        list2 = [2,3,4,10,40]
+        self.assertEqual(bin_search(10,0, len(list2)-1, list2), 3)
 
-
+        list3 = [2,4,5,7,8,10]
+        self.assertEqual(bin_search(4, 0, len(list3)-1, list3), 1)
 if __name__ == "__main__":
         unittest.main()
 
